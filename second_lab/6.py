@@ -24,7 +24,6 @@ dates_another = []
 for date in dates:
     day, month, year = date.split('.')
     dates_another.append(f"{year}-{month}-{day}")
-print(dates_another)
 
 with open("dates.txt", "w") as file:
     for date in dates_another:

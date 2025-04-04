@@ -18,7 +18,7 @@
 
 import re
 
-with open('./additionals/server_logs.txt', 'r') as file:
+with open('./additionals/first/server_logs.txt', 'r') as file:
     logs = file.readlines()
 
 logs = [re.findall(r"\[(.*?)\]", line) for line in logs]
