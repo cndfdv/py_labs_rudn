@@ -14,7 +14,7 @@ from typing import List, Union
 class Student():
     """Student object
     """
-    def __init__(self, name: str, student_id: Union, grades: List):
+    def __init__(self, name: str, student_id: Union, grades: List[int]):
         """Initializes students object
 
         Args:
@@ -38,7 +38,7 @@ class Student():
         if 0 <= grade <= 10:
             self.grades.append(grade)
         else:
-            return 'Grade must be from 0 to 10'
+            raise ValueError('Grade must be from 0 to 10')
 
     def get_average(self):
         """average grade
@@ -55,6 +55,19 @@ class Student():
         print('Student_name:', self.name, sep=" ")
         print("Student grades:", self.grades)
         print("Student mean grade:", self.get_average())
+    
+    def __str__(self):
+        return f"Student {self.name} with id {self.student_id} has grades {self.grades}"
+    
+    def __len__(self):
+        return len(self.grades)
+
+    def __eq__(self, other):
+        try:
+            return self.student_id == other.student_id
+        except:
+            return False
+
     
 if __name__ == "__main__":
     student = Student("Arsenii Kniazev", 14, [10, 10, 9, 10, 9, 10])
