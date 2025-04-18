@@ -14,7 +14,7 @@
 """
 import re
 
-with open('./second_lab/text.txt') as file:
+with open('data/text.txt') as file:
     text = file.read()
 
 text = text.replace('\n', ' ')
@@ -25,7 +25,7 @@ for date in dates:
     day, month, year = date.split('.')
     dates_another.append(f"{year}-{month}-{day}")
 
-with open("dates.txt", "w") as file:
+with open("result/dates.txt", "w") as file:
     for date in dates_another:
         file.write(date + "\n")
 
